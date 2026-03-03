@@ -1,0 +1,65 @@
+/* style.css */
+body {
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color: #0B0B0F;
+}
+
+/* Background Image Layer */
+.page-background {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -2;
+    background-image: url('heroi.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.8); /* Image ko subtle rakha gaya hai */
+}
+
+.page-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at 50% 50%, transparent 0%, #0B0B0F 100%);
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 19px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Cleaner Text Gradient */
+.text-gradient {
+    background: linear-gradient(180deg, #ffffff 50%, #6366f1 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.accent-gradient {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+}
+
+.nav-link {
+    transition: all 0.4s ease;
+}
+
+.nav-link:hover {
+    color: #818cf8;
+    letter-spacing: 0.3em;
+}
+
+.glow-card {
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+}
+
+.glow-card:hover {
+    background: rgba(99, 102, 241, 0.05);
+    border-color: rgba(99, 102, 241, 0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
