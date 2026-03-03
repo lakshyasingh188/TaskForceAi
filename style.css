@@ -14,7 +14,7 @@ body {
     background-image: url('heroi.png');
     background-size: cover;
     background-position: center;
-    filter: brightness(0.8); /* Image ko subtle rakha gaya hai */
+    filter: brightness(0.9); /* Image ko subtle rakha gaya hai */
 }
 
 .page-overlay {
@@ -27,7 +27,7 @@ body {
 .glass {
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(10px);
-    border: 19px solid rgba(255, 255, 255, 0.05);
+    border: 16px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Cleaner Text Gradient */
@@ -42,7 +42,10 @@ body {
 .accent-gradient {
     background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
 }
-
+nav {
+    z-index: 100; /* Taaki navbar hamesha upar rahe */
+    height: 80px; /* Ek fixed height */
+}
 .nav-link {
     transition: all 0.4s ease;
 }
@@ -63,3 +66,86 @@ body {
     transform: translateY(-10px);
     box-shadow: 0 30px 60px rgba(0,0,0,0.5);
 }
+/* ===== MOBILE OPTIMIZATION START ===== */
+
+/* Prevent horizontal scroll */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Make all images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Make videos responsive */
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Flexible containers */
+.container, .wrapper, .section {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Improve button touch size (Apple + Android friendly) */
+button, .btn, a {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+}
+
+/* Fix text scaling issue in iPhone */
+body {
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Mobile Responsive Layout */
+@media (max-width: 768px) {
+
+    /* Reduce large paddings */
+    section {
+        padding: 40px 15px !important;
+    }
+
+    /* Headings smaller on mobile */
+    h1 { font-size: 24px !important; }
+    h2 { font-size: 20px !important; }
+    h3 { font-size: 18px !important; }
+
+    /* Paragraph readable */
+    p {
+        font-size: 14px !important;
+        line-height: 1.6;
+    }
+
+    /* Stack flex layouts vertically */
+    .flex, .row {
+        flex-direction: column !important;
+    }
+
+    /* Grid becomes single column */
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+
+}
+
+/* Extra small devices (iPhone SE etc.) */
+@media (max-width: 480px) {
+
+    h1 { font-size: 20px !important; }
+
+    button, .btn {
+        width: 100%;
+    }
+
+}
+
+/* ===== MOBILE OPTIMIZATION END ===== */
