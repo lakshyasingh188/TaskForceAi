@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body>
 
+<body>
+    <div id="solana-bg"></div>
     <div class="fixed-bg"></div>
     <div class="bg-overlay"></div>
 
@@ -37,8 +39,10 @@
     <header class="hero">
         <div class="hero-content" data-aos="zoom-out" data-aos-duration="1500">
             <p class="hero-label">PRIVATE HOLDING COMPANY | STRATEGIC VENTURES | INNOVATION ENGINE</p>
-            <h1 class="main-title">Engineering the<br><span class="gradient-text">Infrastructure of Tomorrow.</span></h1>
-            <p class="hero-subtext">TaskForceAi Pvt Ltd is a strategic holding and innovation company building scalable digital ecosystems across AI, technology, media, and high-growth infrastructure domains.</p>
+            <h1 class="main-title">Engineering the<br><span class="gradient-text">Infrastructure of Tomorrow.</span>
+            </h1>
+            <p class="hero-subtext">TaskForceAi Pvt Ltd is a strategic holding and innovation company building scalable
+                digital ecosystems across AI, technology, media, and high-growth infrastructure domains.</p>
             <div class="hero-cta-wrapper">
                 <a href="#ecosystem" class="cta-primary">Explore Our Ecosystem</a>
             </div>
@@ -51,7 +55,8 @@
                 <div class="text-side" data-aos="fade-right">
                     <p class="blue-label">WHO WE ARE</p>
                     <h2 class="section-h2">A Structured Innovation Company</h2>
-                    <p class="desc-p">TaskForceAi Pvt Ltd is not a service provider. We operate as a parent holding company responsible for:</p>
+                    <p class="desc-p">TaskForceAi Pvt Ltd is not a service provider. We operate as a parent holding
+                        company responsible for:</p>
                     <ul class="styled-list">
                         <li>Incubating high-potential digital ventures</li>
                         <li>Structuring scalable business ecosystems</li>
@@ -72,34 +77,41 @@
             <h2 class="section-h2">Premium Digital Assets</h2>
         </div>
         <div class="eco-grid">
+            <a href="https://forensicbuzz.com" target="_blank" class="card-link" data-aos="fade-up"
+                data-aos-delay="200">
+                <div class="eco-card">
+                    <div class="card-icon">#03</div>
+                    <img src="logo-for.jpeg" alt="logo" class="logo">
+                    <h3>ForensicBuzz.com</h3>
+                    <p>Cybersecurity, forensic intelligence, and digital awareness platform.</p>
+                </div>
+            </a>
             <a href="https://agitools24.com" target="_blank" class="card-link" data-aos="fade-up">
                 <div class="eco-card">
-                    <div class="card-icon">01</div>
+                    <div class="card-icon">#01</div>
+                    <img src="logo-tool.png" alt="logo" class="logo">
                     <h3>Tools24</h3>
                     <p>AI tools & digital productivity ecosystem enabling creators and businesses.</p>
+
                 </div>
+
             </a>
             <a href="https://yssindia.org" target="_blank" class="card-link" data-aos="fade-up" data-aos-delay="100">
                 <div class="eco-card">
-                    <div class="card-icon">02</div>
+                    <div class="card-icon">#02</div>
+                    <img src="logo-yss.jpg" alt="logo" class="logo">
                     <h3>YssIndia.org</h3>
                     <p>Structured youth empowerment and community initiative.</p>
-                </div>
-            </a>
-            <a href="https://forensicbuzz.com" target="_blank" class="card-link" data-aos="fade-up" data-aos-delay="200">
-                <div class="eco-card">
-                    <div class="card-icon">03</div>
-                    <h3>ForensicBuzz.com</h3>
-                    <p>Cybersecurity, forensic intelligence, and digital awareness platform.</p>
                 </div>
             </a>
             <div class="eco-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="card-icon">Coming Soon....</div>
                 <h3>Next Project </h3>
-                
+
             </div>
         </div>
-        <p class="grid-footer-line">Each venture operates independently under the strategic framework of TaskForceAi Pvt Ltd.</p>
+        <p class="grid-footer-line">Each venture operates independently under the strategic framework of TaskForceAi Pvt
+            Ltd.</p>
     </section>
 
     <section id="verticals" class="glass-section section-padding">
@@ -131,7 +143,8 @@
             <div class="gov-content" data-aos="fade-left">
                 <p class="blue-label">GOVERNANCE PHILOSOPHY</p>
                 <h2 class="section-h2">Disciplined Structure</h2>
-                <p class="desc-p">We are building a structured digital portfolio — not temporary projects. Our expansion is calculated and sustainable.</p>
+                <p class="desc-p">We are building a structured digital portfolio — not temporary projects. Our expansion
+                    is calculated and sustainable.</p>
             </div>
         </div>
     </section>
@@ -156,5 +169,85 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script>
+
+        (function () {
+
+            const container = document.createElement("div");
+
+            container.id = "solana-bg";
+
+            container.style.position = "fixed";
+            container.style.top = "0";
+            container.style.left = "0";
+            container.style.width = "100%";
+            container.style.height = "100%";
+            container.style.zIndex = "-1";
+
+            document.body.prepend(container);
+
+            const scene = new THREE.Scene();
+
+            const camera = new THREE.PerspectiveCamera(
+                75,
+                window.innerWidth / window.innerHeight,
+                0.1,
+                1000
+            );
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            container.appendChild(renderer.domElement);
+
+            const geometry = new THREE.TorusKnotGeometry(10, 3, 300, 32);
+
+            const material = new THREE.MeshStandardMaterial({
+                color: 0x14F195,
+                wireframe: true
+            });
+
+            const knot = new THREE.Mesh(geometry, material);
+
+            scene.add(knot);
+
+            const light = new THREE.PointLight(0xffffff, 1);
+
+            light.position.set(50, 50, 50);
+
+            scene.add(light);
+
+            camera.position.z = 30;
+
+            function animate() {
+
+                requestAnimationFrame(animate);
+
+                knot.rotation.x += 0.003;
+                knot.rotation.y += 0.004;
+
+                renderer.render(scene, camera);
+
+            }
+
+            animate();
+
+            window.addEventListener("resize", () => {
+
+                camera.aspect = window.innerWidth / window.innerHeight;
+
+                camera.updateProjectionMatrix();
+
+                renderer.setSize(window.innerWidth, window.innerHeight);
+
+            });
+
+        })();
+
+    </script>
 </body>
+
 </html>
